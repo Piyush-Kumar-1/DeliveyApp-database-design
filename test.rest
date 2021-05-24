@@ -1,0 +1,74 @@
+POST http://localhost:5000/order/order
+Content-Type: application/json
+
+{
+    "order":[{"name":"chip","quantity":"30","location":"1234"}]
+}
+
+###
+
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+    "name":"abcd",
+    "phone":"100",
+    "password":"123456",
+    "type":"user"
+}
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "phone":"100",
+    "password":"123456"
+}
+
+###
+POST  http://localhost:5000/me
+
+### 
+POST http://localhost:5000/logout
+
+###
+POST http://localhost:5000/post
+Content-Type: application/json
+
+{
+    "name":"chip",
+    "address":{"name":"abcd","city":"def","location":"7777"},
+    "category":"food and beverab",
+    "quantity":20
+}
+
+###
+GET http://localhost:5000/order/getDelivery
+
+###
+GET http://localhost:5000/order/getOrder
+Content-Type: application/json
+
+{
+    "orderStage":"Task Created"
+}
+
+###
+POST http://localhost:5000/order/assign
+Content-Type: application/json
+
+{
+    "orderId":"60ab2296b2480837104dfa94",
+    "deliveryId":"60ab217120ca4d0d4833e593"
+}
+###
+
+POST http://localhost:5000/order/updateStatus
+Content-Type: application/json
+
+{
+    "id":"60ab2296b2480837104dfa94",
+    "status":"delivered"
+}
